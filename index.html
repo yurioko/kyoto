@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tokyo Street Gallery</title>
+  <!-- swiper css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+  <div class="wrapper">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+      <script src="hover-effect.umd.js"></script>
+
+    <!-- NAVBAR
+    =============================== -->
+    <nav class="navbar">
+      <div class="menu">
+        <i class="fa fa-bars"></i>MENU
+      </div>
+
+      <div class="logo">PHOTO GALLERY</div>
+
+      <div class="media">
+        <ul>
+          <li><a href="#">fb</a></li>
+          <li><a href="#">ig</a></li>
+          <li><a href="#">tw</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- BG TEXT
+    =============================== -->
+    <div class="bg-text">
+      <h1>tokyotokyo</h1>
+    </div>
+
+    <!-- SLIDER
+    =============================== -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="slide-number">
+            <p><span>001</span></p>
+          </div>
+          <div class="slide-text">
+            <h4><span></span></h4>
+          </div>
+          <div class="slide-img"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="slide-number">
+            <p><span>002</span></p>
+          </div>
+          <div class="slide-text">
+            <h4><span>so many people</span></h4>
+          </div>
+          <div class="slide-img"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="slide-number">
+            <p><span>003</span></p>
+          </div>
+          <div class="slide-text">
+            <h4><span>but nice people</span></h4>
+          </div>
+          <div class="slide-img"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="slide-number">
+            <p><span>004</span></p>
+          </div>
+          <div class="slide-text">
+            <h4><span>traditional sights</span></h4>
+          </div>
+          <div class="slide-img"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="slide-number">
+            <p><span>005</span></p>
+          </div>
+          <div class="slide-text">
+            <h4><span>nice food</span></h4>
+          </div>
+          <div class="slide-img"></div>
+        </div>
+
+      </div>
+    </div>
+
+
+    
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="share">
+          <p>SHARE</p>
+        </div>
+        <div class="more">
+          <p>FULL PROJECT</p>
+        </div>
+        <div class="scroll">
+          <p>SCROOL</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- gsap -->
+ 
+  <!-- swiper js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+  <!-- custom js -->
+  <script src="main.js"></script>
+
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+		<script src="js/hover.js"></script>
+		<script>
+			imagesLoaded( document.querySelectorAll('img'), () => {
+				document.body.classList.remove('loading');
+			});
+
+			Array.from(document.querySelectorAll('.grid__item-img')).forEach((el) => {
+				const imgs = Array.from(el.querySelectorAll('img'));
+				new hoverEffect({
+					parent: el,
+					intensity: el.dataset.intensity || undefined,
+					speedIn: el.dataset.speedin || undefined,
+					speedOut: el.dataset.speedout || undefined,
+					easing: el.dataset.easing || undefined,
+					hover: el.dataset.hover || undefined,
+					image1: imgs[0].getAttribute('src'),
+					image2: imgs[1].getAttribute('src'),
+					displacementImage: el.dataset.displacement
+				});
+			});
+		</script>
+
+
+</body>
+
+</html>
